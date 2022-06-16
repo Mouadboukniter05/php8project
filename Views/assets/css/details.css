@@ -1,0 +1,30 @@
+
+.img{
+    width: 200%;
+    height: 50%;
+    object-fit: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    color: white;
+    margin-top: 2rem;
+     margin-left: -29rem;
+    font-size: 5rem;
+    position: absolute;
+}
+#addTocart{
+    border-radius: 2rem;
+    padding-left: 1rem;
+    width: 20rem;
+    height: 4rem;
+    background-color: #1972ff;
+    margin-top: -100rem;
+    position: relative;
+    /* align-items: center;
+    display: flex;
+    justify-content: center; */
+    margin-left: 50rem;
+}
