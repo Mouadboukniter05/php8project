@@ -17,10 +17,8 @@
             }else{
                 $sql = "select * from categorie where idCategorie =".$id;
                 $result = $this->_pdo->query($sql);
-                if ($result->rowCount() >= 1)
                     return $result->fetch();
-                else
-                    throw new Exception("Categorie inéxistante");
+               
             }
         }
 

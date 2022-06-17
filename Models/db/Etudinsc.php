@@ -14,21 +14,15 @@
                 $sql = "select c.titreCourse  , etu.username from prof pr , course c , detailsd_unscription du , prof etu where pr.idProf = ".$idprof." AND  pr.idProf = c.idProf and c.idCourse = du.idCourse and du.idEtudient = etu.idProf";
                 $sql.=" group by c.titreCourse";
                 $result = $this->_pdo->query($sql); 
-                if ($result->rowCount() >= 1)
-                    return $result->fetchAll();
-                else
-                    throw new Exception("detailsd_unscription inéxistante");
-            
+                return $result->fetchAll();
         }
         public function getMyCourse($idet){
            
             $sql = "select pr.username,c.titreCourse,du.dateinscripton,c.idCourse from prof etu , course c , prof pr ,detailsd_unscription du where etu.idProf = 14 and etu.idProf = du.idEtudient and c.idCourse = du.idCourse and pr.idProf = c.idProf;";
             $sql.=" group by c.titreCourse";
             $result = $this->_pdo->query($sql); 
-            if ($result->rowCount() >= 1)
                 return $result->fetchAll();
-            else
-                throw new Exception("detailsd_unscription inéxistante");
+
         
     }   
 

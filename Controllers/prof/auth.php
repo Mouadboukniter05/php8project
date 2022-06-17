@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION["user"])){
+    header("location:http://localhost/pfe/Controllers/prof/list.php");
+}
     require_once "../../Models/db/Prof.php";
 
     $msg = "";

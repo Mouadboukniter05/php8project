@@ -17,10 +17,7 @@
             }else{
                 $sql = "select * from course where idCourse=".$id;
                 $result = $this->_pdo->query($sql);
-                if ($result->rowCount() >= 1)
-                    return $result->fetch();
-                else
-                    throw new Exception("cours inéxistante");
+                return $result->fetch();
             }
         }
         
@@ -34,19 +31,14 @@
         public function getCoursePerProf($id){
                 $sql = "select * from course where idProf=".$id;
                 $result = $this->_pdo->query($sql);
-                if ($result->rowCount() >= 1)
-                    return $result->fetchAll();
-                else
-                    throw new Exception("cours inéxistante");
+                return $result->fetchAll();
+                
         }
 
         public function getCoursePerCategorie($id){
             $sql = "select * from course where 	idCategorie=".$id;
-            $result = $this->_pdo->query($sql);
-            if ($result->rowCount() >= 1)
-                return $result->fetchAll();
-            else
-                throw new Exception("cours inéxistante");
+            $result = $this->_pdo->query($sql); 
+            return $result->fetchAll();
     }
 
         public function checkid($id){
@@ -64,9 +56,5 @@
                 return $stmt->execute(array($idProf,$idCategorie,$titreCourse,$prix,$description,$dateAjout,$video,$image));
             
                
-        }
-
-       
-
-      
+        }      
     }

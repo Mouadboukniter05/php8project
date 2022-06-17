@@ -1,5 +1,8 @@
 <?php
     require_once "../../Models/db/Prof.php";
+    if(isset($_SESSION["user"])){
+        header("location:http://localhost/pfe/Controllers/prof/list.php");
+    }
     // add($username,$tel,$email,$password,$isprof)
     $msg = "";
     if (isset($_POST["username"]) && isset($_POST["tel"]) &&  isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["isprof"])  ){

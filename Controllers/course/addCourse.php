@@ -13,10 +13,7 @@ session_start();
     if (isset($_POST["idCategorie"]) && isset($_POST["titreCourse"]) &&  isset($_POST["prix"]) && isset($_POST["description"]) && isset($_POST["dateAjout"]) && isset($_POST["video"]) && isset($_POST["image"])  ){
         $course = new course();
         $flag = $course->add($_SESSION["user"]["idProf"],$_POST["idCategorie"],$_POST["titreCourse"],$_POST["prix"],$_POST["description"],$_POST["dateAjout"],$_POST["video"] ,$_POST["image"]);
-        if ($flag)
-            header("location:auth.php");
-        else
-            $msg = "Email is already exsit";
+            header("location:http://localhost/pfe/Controllers/prof/list.php");
     }
     $categoriesdb = new Categorie();
     $categories = $categoriesdb->get();

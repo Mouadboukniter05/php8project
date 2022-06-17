@@ -17,10 +17,9 @@
             }else{
                 $sql = "select * from prof where isProf = 1 and idProf =".$id;
                 $result = $this->_pdo->query($sql);
-                if ($result->rowCount() >= 1)
+               
                     return $result->fetch();
-                else
-                    throw new Exception("Etudiant inéxistante");
+               
             }
         }
         //kanjibo les profs
@@ -32,10 +31,8 @@
             }else{
                 $sql = "select * from prof where isProf = 0 and idProf =".$id;
                 $result = $this->_pdo->query($sql);
-                if ($result->rowCount() >= 1)
                     return $result->fetch();
-                else
-                    throw new Exception("Etudiant inéxistante");
+              
             }
         }
         public function auth($email,$password){
